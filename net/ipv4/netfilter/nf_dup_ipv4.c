@@ -25,7 +25,7 @@
 // add by PengHao
 #include <linux/inetdevice.h>
 
-extern tee_use_src;
+extern int tee_use_src;
 static bool nf_dup_ipv4_route(struct net *net, struct sk_buff *skb,
 			      const struct in_addr *gw, int oif)
 {

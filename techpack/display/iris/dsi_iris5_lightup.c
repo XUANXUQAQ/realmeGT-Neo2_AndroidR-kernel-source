@@ -4329,7 +4329,7 @@ void iris_set_n2m_enable(bool bEn)
 	pcfg->n2m_enable = bEn;
 }
 
-int iris_wait_vsync()
+int iris_wait_vsync(void)
 {
 	struct iris_cfg *pcfg = iris_get_cfg();
 	struct drm_encoder *drm_enc;

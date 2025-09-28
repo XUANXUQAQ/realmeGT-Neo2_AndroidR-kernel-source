@@ -23,10 +23,18 @@
 
 #ifdef OPLUS_FEATURE_CHG_BASIC
 /* zhangkun@BSP.CHG.Basic, 2019/03/25, Add for charging */
+/*
 #include "../../../../kernel/msm-4.19/drivers/power/supply/qcom/smb5-reg.h"
 #include "../../../../kernel/msm-4.19/drivers/power/supply/qcom/schgm-flash.h"
 #include "../../../../kernel/msm-4.19/drivers/power/supply/qcom/battery.h"
 #include "../../../../kernel/msm-4.19/drivers/power/supply/qcom/step-chg-jeita.h"
+ */
+
+/* zhangkun@BSP.CHG.Basic, 2019/03/25, Add for charging */
+#include "../../../../drivers/power/supply/qcom/smb5-reg.h"
+#include "../../../../drivers/power/supply/qcom/schgm-flash.h"
+#include "../../../../drivers/power/supply/qcom/battery.h"
+#include "../../../../drivers/power/supply/qcom/step-chg-jeita.h"
 #endif
 
 #include <linux/irq.h>
@@ -10668,7 +10676,7 @@ usbtemp_next:
 	//chg_err("usbtemp_volt_l:%d, usbtemp_volt_r:%d\n",chip->usbtemp_volt_l, chip->usbtemp_volt_r);
 }
 
-void oplus_set_typec_sinkonly()
+void oplus_set_typec_sinkonly(void)
 {
 	int rc;
 	struct smb_charger *chg = NULL;
@@ -16027,7 +16035,7 @@ void oplus_set_flash_screen_ctrl_by_pcb_version(struct oplus_chg_chip *chip)
 #endif
 
 extern int oplus_pdo_select(int vbus_mv, int ibus_ma);
-int oplus_chg_set_pd_config()
+int oplus_chg_set_pd_config(void)
 {
 	int ret = 0;
 	struct oplus_chg_chip *chip = g_oplus_chip;
@@ -16099,7 +16107,7 @@ int oplus_chg_enable_qc_detect(void)
 	return ret;
 }
 
-int oplus_chg_set_qc_config()
+int oplus_chg_set_qc_config(void)
 {
 	int ret = 0;
 	struct smb_charger *chg = NULL;

@@ -397,7 +397,7 @@ static const struct file_operations panel_ops =
 	.mmap               = panel_mmap,
 };
 
-static int __init oplus_display_panel_init()
+static int __init oplus_display_panel_init(void)
 {
 	int rc = 0;
 
@@ -446,7 +446,7 @@ err_class_create:
 	return rc;
 }
 
-void __exit oplus_display_panel_exit()
+void __exit oplus_display_panel_exit(void)
 {
 	pr_err("%s\n", __func__);
 
