@@ -25,7 +25,7 @@
 
 #ifdef CONFIG_PM_SLEEP
 
-char stpcpy(char *yydest, const char *yysrc)
+char* stpcpy(char *yydest, const char *yysrc)
 {
   char *yyd = yydest;
   const char *yys = yysrc;
