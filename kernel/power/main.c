@@ -25,6 +25,17 @@
 
 #ifdef CONFIG_PM_SLEEP
 
+char stpcpy(char *yydest, const char *yysrc)
+{
+  char *yyd = yydest;
+  const char *yys = yysrc;
+
+  while ((*yyd++ = *yys++) != '\0')
+    continue;
+
+  return yyd - 1;
+}
+
 void lock_system_sleep(void)
 {
 	current->flags |= PF_FREEZER_SKIP;
